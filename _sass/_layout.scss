@@ -1,3 +1,6 @@
+@use "sass:color";
+@use "base/variables" as *;
+
 body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -172,7 +175,7 @@ figure {
 
 blockquote {
   border-left: 2px solid $light-gray;
-  color: lighten($font-color--base, 15);
+  color: color.adjust($font-color--base, $lightness: 15%);
   margin: 1.5em 0;
   padding-left: 0.75em;
 }
