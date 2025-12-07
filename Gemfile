@@ -3,9 +3,9 @@
 source 'https://rubygems.org'
 
 gem 'bitters', '~> 2.x'
-gem 'bourbon', '~> 6.x'
+gem 'bourbon', '~> 7.x'
 gem 'jekyll', '~> 4.x'
-gem 'neat', '~> 4.x'
+gem 'neat', '~> 4.x', path: 'vendor/neat-4.0.0'
 gem 'redcarpet', '~> 3.x'
 
 group :jekyll_plugins do
