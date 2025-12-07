@@ -2,7 +2,6 @@
 
 source 'https://rubygems.org'
 
-gem 'bitters', '~> 2.x'
 gem 'jekyll', '~> 4.x'
 gem 'redcarpet', '~> 3.x'
 
