@@ -3,7 +3,6 @@
 source 'https://rubygems.org'
 
 gem 'jekyll', '~> 4.x'
-gem 'redcarpet', '~> 3.x'
 
 group :jekyll_plugins do
   gem 'jekyll-paginate'
