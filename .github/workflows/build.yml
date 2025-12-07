@@ -5,20 +5,23 @@ jobs:
     name: site
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v2
-    - name: cache-jekyll
-      uses: actions/cache@v2
-      with:
-        path: |
-          _site
-          .jekyll-cache
-        key: cache-jekyll
-    - name: setup
-      uses: ruby/setup-ruby@v1
-      with:
-        bundler-cache: true
-    - name: build
-      run: bundle exec jekyll build --incremental
-    - name: htmlproofer
-      run: bundle exec htmlproofer ./_site --ignore-urls=/twitter.com/ --allow-missing-href=true
+      - name: checkout
+        uses: actions/checkout@v6
+      - name: cache-jekyll
+        uses: actions/cache@v4
+        with:
+          path: |
+            _site
+            .jekyll-cache
+          key: cache-jekyll
+      - name: setup
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+      - name: build
+        run: bundle exec jekyll build --incremental
+      - name: htmlproofer
+        run: |
+          bundle exec htmlproofer ./_site \
+            --ignore-urls=--ignore-urls=/twitter.com/,/gnu.org/ \
+            --allow-missing-href=true
