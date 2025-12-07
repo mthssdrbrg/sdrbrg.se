@@ -1,27 +1,15 @@
-$small-screen: (
-  columns: 12,
-  media: "screen and (max-width: 800px)",
-);
-
-$normal-screen: (
-  columns: 12,
-  media: "screen and (min-width: 800px)",
-);
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
 
 #container {
-  @include grid-container;
-
-  @include grid-media($small-screen) {
-    @include grid-shift(1 of 12);
-    @include grid-column(10 of 12);
-  }
-
-  @include grid-media($normal-screen) {
-    @include grid-shift(3 of 12);
-    @include grid-column(6 of 12);
-  }
-
+  grid-column: 2 / 12;
   text-align: left;
+
+  @media screen and (min-width: 800px) {
+    grid-column: 4 / 10;
+  }
 
   header {
     margin-top: 1em;
@@ -103,8 +91,7 @@ $normal-screen: (
   }
 
   .pagination {
-    @include clearfix;
-
+    overflow: auto;
     margin-bottom: 2em;
 
     .older {
